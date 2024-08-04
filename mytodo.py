@@ -1,13 +1,10 @@
 # mytodo.py
 
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QHBoxLayout, QtCore
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QHBoxLayout #QtCore
 
 
-def greet():
-    return "Hello World!"
-
-def mytodoapp():
+def mytodoapp(show=True): #  Add the show argument with a default value of True
 
     app = QApplication(sys.argv)
 
@@ -21,14 +18,16 @@ def mytodoapp():
     helloMsg = QLabel("Todo App Just 4 You")
 
     layout = QHBoxLayout()
+    layout.addWidget(helloMsg)
 
-    layout.addWidget(helloMsg, alignment=QtCore.Qt.AlignCenter)
+    #layout.addWidget(helloMsg, alignment=QtCore.Qt.AlignCenter)
     window.setLayout(layout)
 
-    window.show()
+    # Show window only if show is True
+    window.show() if show else None  
 
     # Start the event loop.
-    return app
+    return app.exec()
 
 if __name__ == "__main__":
     app = mytodoapp()

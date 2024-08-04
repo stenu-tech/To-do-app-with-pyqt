@@ -22,3 +22,4 @@ rad.json
 TestResults.xml
 __pycache__/mytodo.cpython-312.pyc
 __pycache__/unittests.cpython-312.pyc
+__pycache__/mytodo_test.cpython-312.pyc
